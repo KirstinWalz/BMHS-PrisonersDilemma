@@ -8,7 +8,7 @@
 
 team_name = 'ugh' # Only 10 chars displayed.
 strategy_name = 'Good for a while.'
-strategy_description = 'Collude until turn 3, unless betrayed.'
+strategy_description = 'Collude until turn 100, unless betrayed.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -57,7 +57,7 @@ def move(my_history, their_history, my_score, their_score):
         return 'b'                              # return 'b'
     elif betrayme >= 1:
         return 'b'
-    elif betrayenemy == 0 and len(theirs) != 3:    # else if they have never betrayed and if it is not the third round
+    elif betrayenemy == 0 and len(theirs) != 100:    # else if they have never betrayed and if it is not the 25th round
         return 'c'                                  # return 'c' as move
     else:
         return 'b'
