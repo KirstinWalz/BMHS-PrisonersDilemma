@@ -26,7 +26,7 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     if their_history == '':
-            return 'b'
+            return 'c'
     theirs = []                                 # empty list to turn string their_history into list
     mine = []                                   # empty list to turn string my_history into a list
     for value in their_history:                # for each value in original string their_history
@@ -53,8 +53,10 @@ def move(my_history, their_history, my_score, their_score):
             colludeme += 1                       # add 1 to collude me
     if justbetray == True:                      # if justbetray is now True
         return 'b'                               # return 'b' as a move
-    elif theirs[len(theirs) - 1] == 'b':        # else if the latest index of theirs is 'b'
+    elif theirs[-1] == 'b':                     # else if the latest index of theirs is 'b'
         return 'b'                              # return 'b'
+    elif betrayme >= 1:
+        return 'b'
     elif betrayenemy == 0 and len(theirs) != 3:    # else if they have never betrayed and if it is not the third round
         return 'c'                                  # return 'c' as move
     else:
